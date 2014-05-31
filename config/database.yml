@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: wiki_development
+  pool: 5
+  username: murica
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: wiki_test
+  pool: 5
+  username: murica
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: wiki_production
+  pool: 5
+  username:
+  password:
