@@ -34,6 +34,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'haml-rails'
+
 group :production do
   gem 'rails_12factor'
 end
