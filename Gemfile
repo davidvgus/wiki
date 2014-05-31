@@ -35,6 +35,7 @@ group :doc do
 end
 
 gem 'haml-rails'
+gem 'redcarpet'
 
 group :production do
   gem 'rails_12factor'
