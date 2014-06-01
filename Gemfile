@@ -45,6 +45,7 @@ gem 'figaro'
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'capybara', git: 'https://github.com/jnicklas/capybara.git'
 end
 
 group :development do
