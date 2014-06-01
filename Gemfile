@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capybara', git: 'https://github.com/jnicklas/capybara.git'
   gem 'pry-rails'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
