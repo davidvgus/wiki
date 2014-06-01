@@ -36,6 +36,10 @@ end
 
 gem 'haml-rails'
 gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+gem 'pygmentize'
+
 
 group :production do
   gem 'rails_12factor'
