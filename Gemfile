@@ -43,6 +43,7 @@ gem 'pygmentize'
 
 
 group :production do
+  gem 'sprockets_better_errors'
   gem 'rails_12factor'
 end
 
