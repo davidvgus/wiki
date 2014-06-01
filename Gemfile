@@ -42,6 +42,11 @@ gem 'nokogiri'
 gem 'pygmentize'
 gem 'figaro'
 
+group :development, :test do
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 group :development do
   gem 'better_errors'
   gem "binding_of_caller"
