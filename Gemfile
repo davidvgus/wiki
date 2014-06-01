@@ -40,6 +40,7 @@ gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
 gem 'pygmentize'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'

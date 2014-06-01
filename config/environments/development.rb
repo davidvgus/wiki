@@ -29,5 +29,5 @@ Wiki::Application.configure do
 
   #required by sprockets_better_errors
   config.assets.raise_production_errors = true
-  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP']
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 end
