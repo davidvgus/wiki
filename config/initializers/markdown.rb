@@ -1,12 +1,5 @@
 # config/initializers/markdown.rb
 
-class PygmentsHTML < Redcarpet::Render::HTML
-
-  def block_code(code, language)
-    Pygments.highlight( code, :lexer => language)
-  end
-end
-
 module Haml::Filters
 
   remove_filter("Markdown") #remove the existing Markdown filter
@@ -22,8 +15,7 @@ module Haml::Filters
     private
 
     def markdown
-      #@markdown ||= Redcarpet::Markdown.new Redcarpet::Render::HTML, {
-      @markdown ||= Redcarpet::Markdown.new PygmentsHTML, {
+      @markdown ||= Redcarpet::Markdown.new Redcarpet::Render::HTML, {
         autolink:         true,
         fenced_code_blocks:      true,
         generate_toc:     true,
