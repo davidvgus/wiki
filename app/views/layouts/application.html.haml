@@ -1,0 +1,18 @@
+!!!
+%head
+  %title
+    Wiki
+  %meta{:charset => "utf-8"}
+  =stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  =javascript_include_tag "application", "data-turbolinks-track" => true
+  =csrf_meta_tags
+%body
+  .container
+    %ul.nav.nav-tabs
+      %li link1
+      %li link2
+  - flash.each do |type, msg|
+    %div{:class => "alert alert-#{type == :notice ? "success" : type} fadeout", "data-dismiss" => "alert"}
+      %button.close &times;
+      = msg if msg.is_a?(String)
+  = yield

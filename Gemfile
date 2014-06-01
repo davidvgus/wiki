@@ -34,6 +34,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'redcarpet'
 gem 'albino'
