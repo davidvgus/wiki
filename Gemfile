@@ -41,6 +41,7 @@ gem 'albino'
 gem 'nokogiri'
 gem 'pygmentize'
 gem 'figaro'
+gem 'devise'
 
 group :development, :test do
   gem 'faker'
