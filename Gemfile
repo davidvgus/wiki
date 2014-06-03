@@ -34,7 +34,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
+gem "zurb-foundation"
 gem 'haml-rails'
 gem 'redcarpet'
 gem 'albino'
