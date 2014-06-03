@@ -14,10 +14,10 @@ test:
   username: murica
   password:
 
-#production:
-  #adapter: postgresql
-  #encoding: unicode
-  #database: wiki_production
-  #pool: 5
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: wiki_production
+  pool: 5
   #username:
   #password:
