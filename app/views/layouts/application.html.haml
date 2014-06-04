@@ -12,6 +12,5 @@
   .panel
     = yield
 
-  = javascript_include_tag "vendor/modernizr-2.6.2.min"
-  = javascript_include_tag "all"
+  = javascript_include_tag :modernizr
   = javascript_include_tag "application", "data-turbolinks-track" => true

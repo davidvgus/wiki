@@ -43,6 +43,7 @@ gem 'nokogiri'
 gem 'pygmentize'
 gem 'figaro'
 gem 'devise'
+gem 'modernizr-rails'
 
 group :development, :test do
   gem 'faker'
