@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :user do
     name
     email
+    account
     password { Faker::Lorem.characters(10) }
     password_confirmation { |user| user.password }
     after(:build) { |user| user.skip_confirmation! }

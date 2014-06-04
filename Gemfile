@@ -60,6 +60,9 @@ group :development do
   gem 'meta_request'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
 
 group :production do
   gem 'sprockets_better_errors'
