@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   belongs_to :account
+  has_many :pages, foreign_key: "owner_id"
   #validates_presence_of :account
 
   before_create :build_account
