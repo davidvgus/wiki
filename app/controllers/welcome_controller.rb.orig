@@ -1,0 +1,11 @@
+
+
+class WelcomeController < ApplicationController
+  def index
+<<<<<<< HEAD
+    #@my_pages = current_user.pages if current_user
+=======
+>>>>>>> configure-page-factory
+    @pages = Page.public
+  end
+end

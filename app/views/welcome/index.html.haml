@@ -1,20 +1,5 @@
-%p
-  :markdown
 
-    ```ruby
-    def howdy
-    puts "hi"
-    end
-    ```
-%p
-  :markdown
-    ====
-    huh?
-    #A
-    ##B
-    ###C
-    * one
-    * two
-    * three
-
-
+- if @pages.any?
+  - @pages.each do |page|
+    .page_link
+      = link_to page.title, page_path(page)
