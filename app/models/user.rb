@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   private
 
   def build_account
-    self.account = Account.create
+    self.account = Account.create!(plan: "free")
   end
 end
