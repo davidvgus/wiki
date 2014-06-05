@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :page do
     title "MyString"
     content "MyText"
-    owner_id 1
+    owner_id { FactoryGirl.create(:user).id }
     private false
   end
 end
