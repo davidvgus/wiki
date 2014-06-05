@@ -1,5 +1,5 @@
 - flash.each do |type, msg|
-  %div{:class => "alert alert-#{type == :notice ? "success" : type} fadeout", "data-dismiss" => "alert"}
-    %button.close
+  %div{:class => "alert-box #{type == :notice ? "success" : type}", "data-alert" => true}
+    = msg if msg.is_a?(String)
+    %a{href: "#", class: "close"}
       &times;
-      = msg if msg.is_a?(String)
