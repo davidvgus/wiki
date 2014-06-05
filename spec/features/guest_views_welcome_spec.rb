@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 include Warden::Test::Helpers
-Warden.test_mode!
 
 feature 'Guest views welcome page' do
   scenario 'public wikis are visible' do
+    %w{Lions Tigers Bears}.each do |page|
+      create(:page, title: page)
+    end
+
     visit root_path
 
     expect(page).to have_content('guest account')
