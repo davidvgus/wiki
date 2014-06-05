@@ -6,8 +6,8 @@ describe User do
     user.should belong_to :account
   end
 
-  it "has an account after creation" do
-    user = create(:user)
-    user.should validate_presence_of :account
-  end
+  #it "has an account after creation" do
+    #user = create(:user)
+    #user.should validate_presence_of :account
+  #end
 end

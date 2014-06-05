@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   belongs_to :account
-  validates_presence_of :account
+  #validates_presence_of :account
 
   before_create :build_account
 
