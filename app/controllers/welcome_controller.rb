@@ -2,6 +2,6 @@
 
 class WelcomeController < ApplicationController
   def index
-    @page
+    @pages = Page.public
   end
 end
