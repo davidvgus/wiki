@@ -44,6 +44,7 @@ gem 'pygmentize'
 gem 'figaro'
 gem 'devise'
 gem 'modernizr-rails'
+gem 'friendly_id', '~> 5.0.0'
 
 group :development, :test do
   gem 'faker'
