@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Page do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "has many collaborators" do
+    page = create(:page)
+
+    expect{page.collaborators}.not_to raise_error
+  end
 end
