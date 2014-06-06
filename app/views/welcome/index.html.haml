@@ -1,5 +1,4 @@
 
-- if @pages.any?
-  - @pages.each do |page|
-    .page_link
-      = link_to page.title, page_path(page)
+- @pages && @pages.each do |page|
+  .page_link
+    = link_to(page.title, page_path(page))

@@ -24,7 +24,7 @@ feature "Authorized free user" do
     end
 
     #private pages
-    %w{Beers Steers Seers}.each do |page|
+    %w{Spheres Fears Tears}.each do |page|
       create(:page, title: page, private: true)
     end
 
@@ -36,20 +36,38 @@ feature "Authorized free user" do
 
 
     visit root_path
-    expect(page).to have_content("booty")
+    expect(page).to have_content("Lions")
+    expect(page).not_to have_content("Spheres")
+    expect(page).to have_content("Peanuts")
+    expect(page).to have_content("Jellies")
 
     Warden.test_reset!
   end
 
-  xscenario "does not see private content" do
-    pending
+  scenario "does not see private content unless it is a joint_page" do
     user = FactoryGirl.create(:user)
+    other_user = FactoryGirl.create(:user)
+    collaborator_user = FactoryGirl.create(:user)
+
     login_as(user, :scope => :user)
 
+    others_private_page = FactoryGirl.create(:page,
+                                             title: "Private, no collaboration",
+                                             private: true,
+                                             owner: other_user)
+
+    joint_page = FactoryGirl.create(:page,
+                                    title: "Private Joint",
+                                    private: true,
+                                    owner: collaborator_user)
+    joint_page.collaborators << user
+
+    public_page = FactoryGirl.create(:page)
 
     visit root_path
-
-    expect(page).to have_content(user.name)
+    expect(page).to have_content(joint_page.title)
+    expect(page).not_to have_content(others_private_page.title)
+    expect(page).to have_content(public_page.title)
     Warden.test_reset!
   end
 end

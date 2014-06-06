@@ -45,6 +45,7 @@ gem 'figaro'
 gem 'devise'
 gem 'modernizr-rails'
 gem 'friendly_id', '~> 5.0.0'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'faker'
