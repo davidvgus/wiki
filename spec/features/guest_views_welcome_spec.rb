@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-include Warden::Test::Helpers
 
 feature 'Guest views welcome page' do
   scenario 'public wikis are visible' do
