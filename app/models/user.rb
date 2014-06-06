@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   belongs_to :account
   has_many :pages, foreign_key: "owner_id"
+  has_many :collaborations
+  has_many :joint_pages, through: :collaborations, source: :page
   #validates_presence_of :account
 
   before_create :build_account
