@@ -14,4 +14,11 @@ describe Account do
     expect { Account.create!(plan: "free") }.to_not raise_exception
     expect { Account.create!(plan: "paid") }.to_not raise_exception
   end
+
+  it "responds to role?" do
+    user = create(:user)
+    account = user.account
+
+    expect( account.role?(:free) ).to eql true
+  end
 end
