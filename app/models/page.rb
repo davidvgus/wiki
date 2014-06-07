@@ -7,4 +7,7 @@ class Page < ActiveRecord::Base
     source: :user
   scope :public, -> { where(private: false) }
 
+  def has_collab?(user)
+    self.collaborators.include?(user)
+  end
 end

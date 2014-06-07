@@ -14,9 +14,11 @@
   = @page.private
 %hr
 = form_tag "/pages/#{@page.id}/set_collaborators", method: :put do
-  - @test_array.each do |num|
+  - @wiki_users.each do |wiki_user|
     .check_box_div
-      = check_box_tag "collaborators[]", num, false
+      = wiki_user.name
+      = wiki_user.email
+      = check_box_tag "wiki_users[]", wiki_user.id, @page.has_collab?(wiki_user)
   = submit_tag
 %hr
 
