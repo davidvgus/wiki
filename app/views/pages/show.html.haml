@@ -12,6 +12,13 @@
 %p
   %b Private:
   = @page.private
+%hr
+= form_tag "/pages/#{@page.id}/set_collaborators", method: :put do
+  - @test_array.each do |num|
+    .check_box_div
+      = check_box_tag "collaborators[]", num, false
+  = submit_tag
+%hr
 
 = link_to 'Edit', edit_page_path(@page)
 \|

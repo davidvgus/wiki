@@ -1,5 +1,14 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [:show, :edit, :update, :destroy, :set_collaborators]
+
+  def set_collaborators
+    # clear all collaborators
+    # add collaborators
+      ## NOTE Show will have to set collaborators minutes current_user
+    #@test_array = [3,2,1]
+    #render :show
+    redirect_to action: :show
+  end
 
   # GET /pages
   # GET /pages.json
@@ -10,6 +19,8 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @test_array = [10,20,30]
+
   end
 
   # GET /pages/new

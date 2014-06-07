@@ -6,4 +6,5 @@ class Page < ActiveRecord::Base
   has_many :collaborators, through: :collaborations,
     source: :user
   scope :public, -> { where(private: false) }
+
 end

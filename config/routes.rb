@@ -1,9 +1,11 @@
 Wiki::Application.routes.draw do
 
+  devise_for :users
 
   resources :pages
 
-  devise_for :users
+  put 'pages/:id/set_collaborators', to: 'pages#set_collaborators'
+
   root 'welcome#index'
 
 end
