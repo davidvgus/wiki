@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy, :set_collaborators]
+  before_action :authorize_action, only: [:edit, :update, :destroy, :set_collaborators]
 
   def set_collaborators
+    authorize @page
     @page.collaborations.destroy_all
     params["wiki_users"].each do |user_id|
       @page.collaborators << User.find(user_id) unless user_id == current_user.id
@@ -71,6 +73,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+    def authorize_action
+      authorize @page
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_page
       @page = Page.friendly.find(params[:id])
