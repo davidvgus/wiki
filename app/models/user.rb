@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :collaborations
   has_many :joint_pages, through: :collaborations, source: :page
 
+  validates_presence_of :name
+
   before_create :build_account
 
   delegate :role?, to: :account
