@@ -1,6 +1,6 @@
 class PagePolicy < ApplicationPolicy
 
   def set_collaborators?
-    user.present?
+    user.present? && record.owner == user
   end
 end

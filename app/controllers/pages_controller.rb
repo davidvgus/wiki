@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   before_action :authorize_action, only: [:edit, :update, :destroy, :set_collaborators]
 
   def set_collaborators
-    authorize @page
     @page.collaborations.destroy_all
     params["wiki_users"].each do |user_id|
       @page.collaborators << User.find(user_id) unless user_id == current_user.id
@@ -36,7 +35,8 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Page.new(page_params)
-
+    @page.owner = current_user
+    authorize @page
     respond_to do |format|
       if @page.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }

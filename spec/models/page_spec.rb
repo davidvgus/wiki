@@ -7,4 +7,5 @@ describe Page do
 
     expect{page.collaborators}.not_to raise_error
   end
+
 end

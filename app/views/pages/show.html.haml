@@ -23,6 +23,7 @@
     = submit_tag
 %hr
 
-= link_to 'Edit', edit_page_path(@page)
+- if policy(@page).edit?
+  = link_to 'Edit', edit_page_path(@page)
 \|
-= link_to 'Back', pages_path
+= link_to 'Back', root_path

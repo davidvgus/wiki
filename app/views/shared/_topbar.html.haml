@@ -18,8 +18,7 @@
     - else
       %ul.left
         %li
-          %a{href: "#"}
-            guest account
+          = link_to("Guest Account", "#")
       %ul.left
         %li
           = link_to("Sign In", new_user_session_path)
