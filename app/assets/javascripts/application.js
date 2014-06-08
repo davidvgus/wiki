@@ -44,14 +44,23 @@ var opts = {
   autogrow: true
 };
 $("#my-edit-area").hide();
-var editor = new EpicEditor(opts).load();
 
-if (window.location.pathname === "/pages/new") {
+var edit_regex = /pages\/\w*\/edit$/i;
+var new_regex = /pages\/new$/i;
+
+console.log("before ifs");
+if (edit_regex.test(window.location.pathname) ){
+  var editor = new EpicEditor(opts).load();
+  console.log("inside edit_regex if");
+}
+
+if (new_regex.test(window.location.pathname) ){
+  var editor = new EpicEditor(opts).load();
   $("#my-edit-area").val("");
   window.editor.importFile(null, '');
-  //window.editor._setupTextareaSync();
-  console.log("hi");
+  console.log("inside new_regex if");
 }
+console.log("after ifs");
 
 $(function(){ $(document).foundation(); });
 
