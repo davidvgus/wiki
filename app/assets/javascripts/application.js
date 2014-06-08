@@ -46,5 +46,12 @@ var opts = {
 $("#my-edit-area").hide();
 var editor = new EpicEditor(opts).load();
 
+if (window.location.pathname === "/pages/new") {
+  $("#my-edit-area").val("");
+  window.editor.importFile(null, '');
+  //window.editor._setupTextareaSync();
+  console.log("hi");
+}
+
 $(function(){ $(document).foundation(); });
 
