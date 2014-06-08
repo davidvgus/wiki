@@ -13,7 +13,7 @@
   %b Private:
   = @page.private
 %hr
-- if policy(Page.new).edit?
+- if policy(@page).edit?
   = form_tag "/pages/#{@page.id}/set_collaborators", method: :put do
     - @wiki_users.each do |wiki_user|
       .check_box_div

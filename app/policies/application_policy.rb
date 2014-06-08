@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    user.present? && (record.user == user || record.collaborators.include?(user))
+    user.present? && (record.owner == user || record.collaborators.include?(user))
   end
 
   def edit?
@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    user.present? && record.user == user
+    user.present? && record.owner == user
   end
 
   def scope
