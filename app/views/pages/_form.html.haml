@@ -13,8 +13,9 @@
     = f.label :content
     #epiceditor
       = f.text_area :content, id: "my-edit-area"
-  .field
-    = f.label :private
-    = f.check_box :private
+  - if current_user.role?(:paid)
+    .field
+      = f.label :private
+      = f.check_box :private
   .actions
     = f.submit 'Save'
