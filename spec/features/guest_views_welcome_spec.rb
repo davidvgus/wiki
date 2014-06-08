@@ -9,7 +9,7 @@ feature 'Guest views welcome page' do
 
     visit root_path
 
-    expect(page).to have_content('guest account')
+    expect(page).to have_content('Guest Account')
     expect(page).to have_content('Sign In')
     expect(page).to have_content('Sign Up')
     expect(page).to have_content('Lions')
@@ -29,7 +29,7 @@ feature 'Guest views welcome page' do
 
       visit root_path
 
-      expect(page).to have_content('guest account')
+      expect(page).to have_content('Guest Account')
       expect(page).to have_content('Sign In')
       expect(page).to have_content('Sign Up')
       expect(page).to have_content('Lions')
@@ -41,4 +41,19 @@ feature 'Guest views welcome page' do
     end
   end
 
+  scenario "does not see Upgrade link on welcome" do
+    visit root_path
+
+    expect(page).not_to have_content('Upgrade')
+  end
+
+  scenario "does not see Upgrade link on welcome" do
+    3.times do
+      create(:page)
+    end
+    public_page = Page.public.first
+    visit page_path(public_page)
+
+    expect(page).not_to have_content('Upgrade')
+  end
 end

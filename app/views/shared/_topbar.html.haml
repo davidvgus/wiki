@@ -9,6 +9,10 @@
           Menu
   %section.top-bar-section.right
     - if current_user
+      - if current_user && current_user.role?(:free)
+        %ul.left
+          %li
+            = link_to("Upgrade", new_charge_path)
       %ul.left
         %li
           = link_to(current_user.name, edit_user_registration_path)

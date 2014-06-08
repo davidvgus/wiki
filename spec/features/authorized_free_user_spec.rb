@@ -70,4 +70,17 @@ feature "Authorized free user" do
     expect(page).to have_content(public_page.title)
     Warden.test_reset!
   end
+
+  scenario "sees upgrade link" do
+    user = FactoryGirl.create(:user)
+
+    login_as(user, :scope => :user)
+
+    visit root_path
+
+    expect(page).to have_content("Upgrade")
+
+    Warden.test_reset!
+
+  end
 end

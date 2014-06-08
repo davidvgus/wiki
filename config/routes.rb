@@ -6,6 +6,8 @@ Wiki::Application.routes.draw do
 
   put 'pages/:id/set_collaborators', to: 'pages#set_collaborators'
 
+  resources :charges, only: [:new, :create]
+
   root 'welcome#index'
 
 end
