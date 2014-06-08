@@ -20,5 +20,6 @@ describe Account do
     account = user.account
 
     expect( account.role?(:free) ).to eql true
+    expect( account.role?(:paid) ).to eql false
   end
 end
