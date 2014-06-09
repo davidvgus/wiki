@@ -83,4 +83,21 @@ feature "Authorized free user" do
     Warden.test_reset!
 
   end
+
+  scenario "sees edit link on public pages" do
+    user = create(:user)
+    user2 = create(:user)
+
+    public_page = create(:page, owner: user2)
+
+    login_as(user, :scope => :user)
+
+    visit page_path(public_page)
+
+    expect(page).to have_content("Edit")
+
+    Warden.test_reset!
+
+  end
+
 end

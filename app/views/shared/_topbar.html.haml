@@ -7,6 +7,16 @@
       %a{href: "#"}
         %span
           Menu
+  -#- if current_user
+    -#%ul.right
+      -#%li
+        -#= link_to("Create New Page", new_page_path)
+  %section.top-bar-section.left
+    - if current_user
+      %ul.left
+        %li
+          = link_to("Create New Page", new_page_path)
+
   %section.top-bar-section.right
     - if current_user
       - if current_user && current_user.role?(:free)
