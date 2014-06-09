@@ -45,8 +45,9 @@ var opts = {
 };
 $("#my-edit-area").hide();
 
-var edit_regex = /pages\/\w*\/edit$/i;
-var new_regex = /pages\/new$/i;
+var edit_regex = /\/edit$/i;
+var new_regex = /\/new$/i;
+console.log(window.location.pathname);
 
 console.log("before ifs");
 if (edit_regex.test(window.location.pathname) ){
