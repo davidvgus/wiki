@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606050853) do
+ActiveRecord::Schema.define(version: 20140609044217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140606050853) do
     t.string   "title"
     t.text     "content"
     t.integer  "owner_id"
-    t.boolean  "private"
+    t.boolean  "private",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"

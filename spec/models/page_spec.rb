@@ -8,4 +8,10 @@ describe Page do
     expect{page.collaborators}.not_to raise_error
   end
 
+  it "private defaults to false" do
+    page = create(:page)
+
+    page.private.should eql false
+  end
+
 end

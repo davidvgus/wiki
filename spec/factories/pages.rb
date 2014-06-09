@@ -6,6 +6,6 @@ FactoryGirl.define do
     title
     content { Faker::Lorem::paragraph }
     owner_id { FactoryGirl.create(:user).id }
-    private false
+    #private false
   end
 end
