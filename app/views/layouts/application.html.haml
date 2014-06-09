@@ -9,8 +9,11 @@
 %body
   = render "shared/topbar"
   = render "shared/flash_area"
-  .panel
-    = yield
+  .row
+    .small-3.large-1.columns
+    .small-3.large-10.columns.content
+      = yield
+    .small-12.large-1.columns
 
   = javascript_include_tag :modernizr
   = javascript_include_tag "application", "data-turbolinks-track" => true
