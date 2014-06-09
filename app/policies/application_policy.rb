@@ -23,8 +23,6 @@ class ApplicationPolicy
   end
 
   def update?
-    #user.present? && (record.owner == user || record.collaborators.include?(user))
-    #user.present? && record.private == false)
     if record.private
       record.owner == user || record.collaborators.include?(user)
     else
