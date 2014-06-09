@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
 
   delegate :role?, to: :account
 
-
   private
 
   def build_account

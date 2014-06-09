@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @wiki_users = User.all
+    @wiki_users = User.where('id !=?', current_user)
   end
 
   # GET /pages/new
