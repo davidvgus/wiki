@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     params["wiki_users"].each do |user_id|
       @page.collaborators << User.find(user_id) unless user_id == current_user.id
     end
+    flash[:notice] = "Edited Collaborators"
     redirect_to action: :show
   end
 
